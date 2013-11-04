@@ -11,14 +11,14 @@ consumerSecret = 'aQSis1UMnwZjTWPNxt5zglyuZZKqiNeDT85c4O2vTE'
 apiKey = '39705383-1tAeEMpeWe1DXTWVOaYaWuHR3CCy7cQMCJ5GCJMub'
 apiSecret = 'emv9SrFa71OVP8videz8sbsvOqLldYri6hwgqtUb4YLv0'
 
-renderer = FeedRenderer(4, 4)
+renderer = FeedRenderer(2, 2)
 
 twitterRepository = TwitterRepository(consumerKey, consumerSecret, apiKey, apiSecret)
 
 def Draw():
-    tweets = twitterRepository.GetTweetsFromUnblockedUsers('@StartupInst', 20)
+    tweets = twitterRepository.GetTweetsFromUnblockedUsers('from:StartupInst', 4)
     renderer.DrawFeed(tweets)
-    renderer.root.after(61, Draw)
+    renderer.root.after(1000, Draw)
 
 Draw()
 renderer.Draw()

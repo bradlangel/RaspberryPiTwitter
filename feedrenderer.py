@@ -60,9 +60,9 @@ class FeedRenderer(Renderer):
 
     def RotateTileColor(self):
         colors = list()
-        colors.append('#f9b2fb') #Pink
+        colors.append('#76838a') #StartupBlue
         colors.append('#b2f4fe') #Blue
-        colors.append('#ddf2b2') #Green
+        colors.append('#ffffff') #White
 
         self.tileColor = colors[self.colorIndex]
         self.colorIndex += 1
@@ -80,7 +80,7 @@ class FeedRenderer(Renderer):
             x, y,
             anchor = 'nw',
             fill = self.textColor,
-            font = ('Cambria', 14),
+            font = ('Cambria', 28),
             text = text,            
             width = width)
 
@@ -89,7 +89,7 @@ class FeedRenderer(Renderer):
             x, y,
             anchor = 'nw',
             fill = self.authorColor,
-            font = ('Cambria', 12),
+            font = ('Cambria', 20),
             text = author,            
             width = width)
 
