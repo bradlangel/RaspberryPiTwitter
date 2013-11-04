@@ -16,7 +16,7 @@ class FeedRenderer(Renderer):
         self.DrawBackgroundImage()
 
     def CalculatePostBounds(self):
-        self.screenWidth = self.root.winfo_screenwidth()
+        self.screenWidth = self.root.winfo_screenwidth() * .5
         self.screenHeight = self.root.winfo_screenheight()
 
         self.postSpacing = 10
@@ -60,7 +60,7 @@ class FeedRenderer(Renderer):
 
     def RotateTileColor(self):
         colors = list()
-        colors.append('#76838a') #StartupBlue
+        colors.append('#567d91') #StartupBlue
         colors.append('#b2f4fe') #Blue
         colors.append('#ffffff') #White
 
