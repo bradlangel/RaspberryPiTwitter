@@ -12,7 +12,7 @@ twitterRepository = TwitterRepository(consumerKey, consumerSecret, apiKey, apiSe
 def Draw():
     tweets = twitterRepository.GetTweetsFromUnblockedUsers('from:StartupInst', 4)
     renderer.DrawFeed(tweets)
-    renderer.root.after(1000, Draw)
+    renderer.root.after(100000, Draw)
 
 Draw()
 renderer.Draw()
