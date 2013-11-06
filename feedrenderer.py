@@ -13,7 +13,8 @@ class FeedRenderer(Renderer):
         self.authorColor = authorColor
 
         self.CalculatePostBounds()
-        self.DrawBackgroundImage()
+        #Currently Don't have a background Image!
+        #self.DrawBackgroundImage()
 
     def CalculatePostBounds(self):
         self.screenWidth = self.root.winfo_screenwidth() * .5
@@ -29,10 +30,10 @@ class FeedRenderer(Renderer):
     def DrawBackgroundImage(self):
         leftMargin = (2048 - self.screenWidth) * -1
         topMargin = (1024 - self.screenHeight) * -1
-        image = Image.open('background.jpg')
+        image = Image.open('StartupInstituteNYC.jpg')
         
         self.photoImage = ImageTk.PhotoImage(image)
-        self.canvas.create_image(leftMargin, topMargin, image = self.photoImage, anchor = 'nw')
+        self.canvas.create_image(leftMargin, topMargin, image = self.photoImage)
 
     def DrawFeed(self, feed):
         point = Point(0, 0)
@@ -60,9 +61,9 @@ class FeedRenderer(Renderer):
 
     def RotateTileColor(self):
         colors = list()
-        colors.append('#567d91') #StartupBlue
-        colors.append('#b2f4fe') #Blue
-        colors.append('#ffffff') #White
+        colors.append('#37a3db') #StartupBlue2
+        colors.append('#ffffff') ##White
+        colors.append('#6aa3da') #StartupBlue
 
         self.tileColor = colors[self.colorIndex]
         self.colorIndex += 1
@@ -80,7 +81,7 @@ class FeedRenderer(Renderer):
             x, y,
             anchor = 'nw',
             fill = self.textColor,
-            font = ('Cambria', 28),
+            font = ('Cambria', 20),
             text = text,            
             width = width)
 
@@ -89,7 +90,7 @@ class FeedRenderer(Renderer):
             x, y,
             anchor = 'nw',
             fill = self.authorColor,
-            font = ('Cambria', 20),
+            font = ('Courier', 20),
             text = author,            
             width = width)
 

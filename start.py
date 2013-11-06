@@ -5,12 +5,12 @@ from feedrenderer import *
 from twitterrepository import *
 from APIProperties import *
 
-renderer = FeedRenderer(2, 2)
+renderer = FeedRenderer(2, 4)
 
 twitterRepository = TwitterRepository(consumerKey, consumerSecret, apiKey, apiSecret)
 
 def Draw():
-    tweets = twitterRepository.GetTweetsFromUnblockedUsers('from:StartupInst', 4)
+    tweets = twitterRepository.GetTweetsFromUnblockedUsers('from:StartupInst OR #StartupInst OR #LearnToDo', 20)
     renderer.DrawFeed(tweets)
     renderer.root.after(100000, Draw)
 

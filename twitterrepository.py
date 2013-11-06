@@ -13,7 +13,7 @@ class TwitterRepository():
         self.InitialiseOAuth(self.consumerKey, self.consumerSecret)
 
     def InitialiseOAuth(self, consumerKey, consumerSecret):
-        self.oauth = OAuth(consumerKey, consumerSecret)
+        self.oauth = OAuth(consumerKey, consumerSecret) 
 
     def GetTweetsFromUnblockedUsers(self, query, count):
         blockedUsers = self.GetBlockedUsers()

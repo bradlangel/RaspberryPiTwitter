@@ -1,7 +1,7 @@
 from Tkinter import *
 
 class Renderer():    
-    def __init__(self, backgroundColor = '#000000'):
+    def __init__(self, backgroundColor = '#373737'):
         self.backgroundColor = backgroundColor
         
         self.Setup()
