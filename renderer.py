@@ -10,11 +10,11 @@ class Renderer():
     def Setup(self):
         self.root = Tk()
         
-        self.screenWidth = self.root.winfo_screenwidth() * .5
-        self.screenHeight = self.root.winfo_screenheight() 
+        self.screenWidth = self.root.winfo_screenwidth() *.5
+        self.screenHeight = self.root.winfo_screenheight()
         
         self.root.overrideredirect(1)
-        self.root.geometry('%dx%d+0+0' % (self.screenWidth, self.screenHeight))
+        self.root.geometry('%dx%d+%d+%d' % (self.screenWidth, self.screenHeight, self.screenWidth, 0))
         self.root.configure(background = self.backgroundColor)
         
     def Canvas(self):

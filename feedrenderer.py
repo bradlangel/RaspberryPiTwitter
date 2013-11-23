@@ -13,11 +13,11 @@ class FeedRenderer(Renderer):
         self.authorColor = authorColor
 
         self.CalculatePostBounds()
-        #Currently Don't have a background Image!
+        #Don't need to construct 
         #self.DrawBackgroundImage()
 
     def CalculatePostBounds(self):
-        self.screenWidth = self.root.winfo_screenwidth() * .5
+        self.screenWidth = self.root.winfo_screenwidth() *.5
         self.screenHeight = self.root.winfo_screenheight()
 
         self.postSpacing = 10
@@ -30,10 +30,10 @@ class FeedRenderer(Renderer):
     def DrawBackgroundImage(self):
         leftMargin = (2048 - self.screenWidth) * -1
         topMargin = (1024 - self.screenHeight) * -1
-        image = Image.open('StartupInstituteNYC.jpg')
+        image = Image.open('background.jpg')
         
         self.photoImage = ImageTk.PhotoImage(image)
-        self.canvas.create_image(leftMargin, topMargin, image = self.photoImage)
+        self.canvas.create_image(leftMargin, topMargin, image = self.photoImage, anchor = 'nw')
 
     def DrawFeed(self, feed):
         point = Point(0, 0)
